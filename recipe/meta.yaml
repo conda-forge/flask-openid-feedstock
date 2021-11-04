@@ -12,19 +12,17 @@ source:
 
 build:
   number: 0
+  noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
-
   run:
-    - python
-    - flask >=0.3  # [py2k]
-    - flask >=0.10.1  # [py3k]
-    - python-openid >=2.0  # [py2k]
-    - python3-openid >=2.0  # [py3k]
+    - python >=3.6
+    - flask >=0.10.1
+    - python3-openid >=2.0
 
 test:
   imports:
